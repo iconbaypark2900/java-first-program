@@ -16,48 +16,48 @@ public class Finance {
         MORTGAGE_CALCULATOR, "usage: mortgageCalculator <loanAmount> <termInYears> <annualRate>"
         );
 
-        private static boolean validateCommandArguements(String[] args) {
-            switch (args[0]) {
-                case BEST_LOAN_RATES:
-                    return args.length == 1;
-                case SAVINGS_CALCULATOR:
-                    return args.length == 3;
-                case MORTGAGE_CALCULATOR:
-                    return args.length == 4;
-            }
-            return false;
+    private static boolean validateCommandArguements(String[] args) {
+        switch (args[0]) {
+            case BEST_LOAN_RATES:
+                return args.length == 1;
+            case SAVINGS_CALCULATOR:
+                return args.length == 3;
+            case MORTGAGE_CALCULATOR:
+                return args.length == 4;
         }
+        return false;
+    }
 
-        private static void executeCommand(String command, String[] arguments) {
-            switch (command) {
-                case BEST_LOAN_RATES:
-                    System.out.println("Finding best loan rates ...");
-                    BestLoanRates.main(arguments);
-                    return;
-                case SAVINGS_CALCULATOR:
-                    System.out.println("Finding your net savings...");
-                    SavingsCalculator.main(arguments);
-                    return;
-                case MORTGAGE_CALCULATOR:
-                    System.out.println("Finding your monthly payment");
-                    MortgageCalculator.main(arguments);
-                    return;
-            }
-        }
-
-        public static void main(String[] args) {
-            String command = args[0];
-            if(!commandsToUsage.containsKey(command)) {
-                System.out.println(command + ": command not found");
+    private static void executeCommand(String command, String[] arguments) {
+        switch (command) {
+            case BEST_LOAN_RATES:
+                System.out.println("Finding best loan rates ...");
+                BestLoanRates.main(arguments);
                 return;
-            }
-
-            boolean isValidCommand = validateCommandArguements(args);
-            if(!isValidCommand) {
-                System.out.println(commandsToUsage.get(args[0]));
+            case SAVINGS_CALCULATOR:
+                System.out.println("Finding your net savings...");
+                SavingsCalculator.main(arguments);
                 return;
-            }
-
-            executeCommand(command, Arrays.copyOfRange(args, 1, args.length));
+            case MORTGAGE_CALCULATOR:
+                System.out.println("Finding your monthly payment");
+                MortgageCalculator.main(arguments);
+                return;
         }
+    }
+
+    public static void main(String[] args) {
+        String command = args[0];
+        if(!commandsToUsage.containsKey(command)) {
+            System.out.println(command + ": command not found");
+            return;
+        }
+
+        boolean isValidCommand = validateCommandArguements(args);
+        if(!isValidCommand) {
+            System.out.println(commandsToUsage.get(args[0]));
+            return;
+        }
+
+        executeCommand(command, Arrays.copyOfRange(args, 1, args.length));
+    }
 }
