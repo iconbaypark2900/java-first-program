@@ -16,7 +16,7 @@ public class Finance {
         MORTGAGE_CALCULATOR, "usage: mortgageCalculator <loanAmount> <termInYears> <annualRate>"
         );
 
-    private static boolean validateCommandArguements(String[] args) {
+    private static boolean validateCommandArguments(String[] args) {
         switch (args[0]) {
             case BEST_LOAN_RATES:
                 return args.length == 1;
@@ -52,7 +52,7 @@ public class Finance {
             return;
         }
 
-        boolean isValidCommand = validateCommandArguements(args);
+        boolean isValidCommand = validateCommandArguments(args);
         if(!isValidCommand) {
             System.out.println(commandsToUsage.get(args[0]));
             return;
