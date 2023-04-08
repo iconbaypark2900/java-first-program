@@ -1,0 +1,51 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Finance",
+            "request": "launch",
+            "mainClass": "Finance",
+            "projectName": "calc"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "com.h2.App",
+            "projectName": "calc"
+        },
+        {
+            "type": "java",
+            "name": "BestLoanRates",
+            "request": "launch",
+            "mainClass": "com.h2.BestLoanRates",
+            "projectName": "calc"
+        },
+        {
+            "type": "java",
+            "name": "MortgageCalculator",
+            "request": "launch",
+            "mainClass": "com.h2.MortgageCalculator",
+            "projectName": "calc"
+        },
+        {
+            "type": "java",
+            "name": "SavingsCalculator",
+            "request": "launch",
+            "mainClass": "com.h2.SavingsCalculator",
+            "projectName": "calc",
+            "args": ["1000,500,200", "800, 200"]
+        }
+    ]
+}
